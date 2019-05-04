@@ -12,7 +12,7 @@ import { Router } from '@angular/router';
 export class BookListComponent implements OnInit, OnDestroy {
 
   books: Book[];
-  booksSubscription : Subscription;
+  booksSubscription: Subscription;
 
   constructor(private booksService: BooksService, private router : Router) { }
 
@@ -22,6 +22,7 @@ export class BookListComponent implements OnInit, OnDestroy {
         this.books = books;
       }
     );
+    this.booksService.getBooks();
     this.booksService.emitBooks();
   }
 
